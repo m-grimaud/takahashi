@@ -11,19 +11,28 @@ export default function SlideShow(props: SlideShowprops) {
 
   useEffect(() => {
     const func = (ev: KeyboardEvent) => {
-      if (ev.key === ' ') {
-        props.setCurrentSlide((prev) => (prev + 1) % props.slides.length)
+      const mod = (n: number, m: number): number => {
+        return ((n % m) + m) % m;
+      }
+
+      const m = props.slides.length;
+      if (ev.key === "ArrowRight") {
+        props.setCurrentSlide((prev) => mod(prev + 1, m))
+      }
+      else if (ev.key  === "ArrowLeft") {
+        props.setCurrentSlide((prev) => mod(prev - 1, m))
       }
     }
 
     const ref = keyRef?.current;
     ref?.focus();
-    ref?.addEventListener("keypress", func);
+    ref?.addEventListener("keydown", func);
 
     return () => {
-      ref?.removeEventListener("keypress", func);
+      ref?.removeEventListener("keydown", func);
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="slide" tabIndex={0} ref={keyRef}>

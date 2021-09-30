@@ -93,9 +93,15 @@ export default function SlideGen(props: SlideGenProps) {
           Lines starting with <code>\</code> produce an empty slide.
         </li>
         <li>
-          Cycle through slides by pressing the space bar.
+          Cycle through slides by using the left and right arrow keys.
         </li>
       </ul>
+      <p>
+        <strong>
+          Help! My text cuts off!
+        </strong>
+        This is intentional. Use more slides with less words on each slide.
+      </p>
     </>
   )
 }
