@@ -26,27 +26,35 @@ function App() {
   if (slideDiv.length === 0) {
     view = <SlideGen {...props} />;
   } else {
-    view = <SlideShow {...slideShowProps}/>
+    view = <SlideShow {...slideShowProps} />
   }
 
   return (
     <>
-      <nav className="header">
+      <nav className="header" id={slideDiv.length > 0 ? "autohide" : ""}>
         <h3 className="no-margin-left">
           Takashi Method
         </h3>
-        <button className="no-margin-right" onClick={() => {
-          setSlideContents('');
-          setSlideDiv([]);
-          setCurrentSlide(0);
-        }}>
-          Reset
-        </button>
+        <div className="no-margin-right">
+          <button style={{margin: "0 1rem 0 0"}} onClick={() => {
+            setSlideDiv([]);
+            setCurrentSlide(0);
+          }}>
+            Edit Slides
+          </button>
+          <button onClick={() => {
+            setSlideContents('');
+            setSlideDiv([]);
+            setCurrentSlide(0);
+          }}>
+            Reset
+          </button>
+        </div>
       </nav>
       <main className="contents">
         {view}
       </main>
-      <Footer />
+      {slideDiv.length === 0 && <Footer />}
     </>
   );
 }

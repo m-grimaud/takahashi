@@ -12,6 +12,14 @@ body {
   display: flex;
 }
 
+#autohide {
+  opacity: 0;
+}
+
+#autohide:hover {
+  opacity: 1;
+}
+
 .slide {
   align-items: center;
   justify-content: center;
