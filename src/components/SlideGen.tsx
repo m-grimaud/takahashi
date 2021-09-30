@@ -92,6 +92,9 @@ export default function SlideGen(props: SlideGenProps) {
         <li>
           Lines starting with <code>\</code> produce an empty slide.
         </li>
+        <li>
+          Cycle through slides by pressing the space bar.
+        </li>
       </ul>
     </>
   )
