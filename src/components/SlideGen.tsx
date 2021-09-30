@@ -76,15 +76,20 @@ export default function SlideGen(props: SlideGenProps) {
         Generate Slides
       </button>
       <p>
+        <a href="http://rubycolor.org/takahashi" target="_blank" rel="noreferrer">高橋メソッドとは？</a>
+      </p>
+      <p>
         Create presentation slides using the <a href="https://en.wikipedia.org/wiki/Takahashi_method" target="_blank" rel="noreferrer">Takahashi Method</a>, emphasizing the use of few words in large print with no charts or pictures.
-        Slides are structured as described below.
+      </p>
+      <p>
+        Instructions:
       </p>
       <ul>
         <li>
           One or more blank lines between sentences designates paragraphs.
         </li>
         <li>
-          One slide per paragraph.
+          One paragraph is one slide.
         </li>
         <li>
           Lines starting with <code>#</code> are ignored.
