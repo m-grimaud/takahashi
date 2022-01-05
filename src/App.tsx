@@ -33,7 +33,7 @@ function App() {
     <>
       <nav className="header" id={slideDiv.length > 0 ? "autohide" : ""}>
         <h3 className="no-margin-left">
-          Takashi Method
+          Takahashi Method
         </h3>
         <div className="no-margin-right">
           <button style={{margin: "0 1rem 0 0"}} onClick={() => {
